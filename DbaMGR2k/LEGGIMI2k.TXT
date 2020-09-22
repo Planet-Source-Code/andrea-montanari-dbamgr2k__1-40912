@@ -1,0 +1,194 @@
+--------------------------------------------------------------------------------
+DbaMgr2k  -       Una Piccola Console Alternativa per MSDE 2.0
+--------------------------------------------------------------------------------
+Premessa.
+Provengo dal mondo del Jet Engine, a partire da quello presente in VB3
+e malgrado cio' non ho mai posseduto una copia di Access, ho sempre
+fatto tutto con Dao e Visual Data Manager.
+Msde 2000, al pari del fratello maggiore e' stato profondamente modificato,
+sia nelle configurazioni che nella necessita' di manutenzioni, per
+raggiungere quello che comunemento viene chiamato TCO=0
+(Total Cost of Ownership =0).
+Purtroppo per noi pero', Microsoft non rilascia insieme a Msde 2000 alcuno
+strumento visuale per la gestione del motore o per la manutenzione
+ordinaria dello stesso. Viene solo fornito un interfaccia a carattere,
+oSql.exe che, se pure potente, e' indicata per utenti quantomeno esperti
+DBA o simili, non sicuramente nella media dei miei clienti.
+SQL2000 stesso e' esso stesso uno strumento non proprio facilissimo..
+Se il prodotto che cedo viene installato in aziende dove siano
+presenti SA in organico, non esiste problema, ed e' anche possibile che
+sia gia' presente il motore completo di Sql Server, ma, negli altri casi?
+Visto che non credo di poter pretendere di dire ai miei clienti di
+lanciare oSql e scrivere oscuri comandi T-SQL per effettuare operazioni
+quali un Backup o altro, da tutto cio' scaturisce questo progetto.
+Il progetto e' la naturale conseguenza del progetto gemello, DbaMgr, nato
+intorno al 1999, che e' in grado di gestire Microsoft Sql Server 7.0 e Msde1,
+ed anch'esso e' reperibile presso il sito originale piu' sotto riportao.
+L'idea deriva da un articolo di Peter Swaniker (vbpj july 1999
+"Managing Sql Server 7.0"), che pero' si appoggia sull'oggetto Com dei
+Namespace, oggetto pero' non redistribuibile con soluzioni Msde 2000, cosi'
+il form frmMain, inizialmente suo, e' stato riadattato, mentre il resto
+e' tutto mio, nel bene e nel male.
+Non pretende ne' di essere completo ne' di essere privo di Bug, ma puo'
+essere uno spunto e base anche per altri.
+
+Anche DbaMgr2k, come il precedente DbaMgr, e' stato sviluppato con VB6 sp5,
+si appoggia completamente sull'oggetto Com Sql-DMO di SqlServer 2000, che
+deve essere presente e registrato sulla macchina, che e' un'interfaccia di
+programmazione di Sql Server utile alla gestione sia del motore che degli
+oggetti da esso creati. E' stato ancora utilizzato Visual Basic 6.0 in quanto
+non e' a tutt'oggi disponibile un componente nativo .Net omologo a Sql-DMO,
+i tempi di sviluppo si sarebbero enormemente dilatati ed inoltre tutte le
+chiamate a Sql-DMO avrebbero sofferto pesanti overhead date le necessarie
+chiamate via INTEROP della piattaforma .Net.
+Oltre ai Common Control e RichEdit, e' necessario il controllo OCX
+MSFlexGrid, MS DataGrid e Mdac 2.6.
+Il progetto e' stato volutamente separato da DbaMgr, in quanto, utilizzando
+DbaMgr2k la versione "2" delle interfacce Sql-DMO disponibili su SqlServer
+2000, non sarebbe stato possibile ricompilare direttamente il progetto da chi
+avesse solo SqlServer 7.0.
+
+Non vuole sicuramente essere un'alternativa ad Enterprise Manager,
+e' sicuramente primitivo e semplicistico, ma permette la gestione di una
+semplice installazione di MSDE 2000 con i tasks amministrativi piu' comuni,
+d'altronde installazioni piu' complicate necessiterebbero comunque di un
+DBA e dell'utilizzo di Enterprise Manager).
+
+In aggiunta alla gestione/manutenzione stessa del server e dei database, sono
+presenti altre due utilita' integrate nel progetto:
+La piccola interfaccia di query, seppur limitata, consente di spezzare i
+comandi in transazioni separate da istruzioni GO, e consente il ritorno di
+QueryResults (Resultsets) multipli.
+
+BCP; consente operazioni di Bulk Copy veloci da e per Tabelle/Viste di
+Sql2000, potendo scegliere tra importazione/esportazione da e verso file
+in formato Nativo di SQL2000, formato a Carattere e il cosidetto Custom,
+con la creazione/utilizzo e modifica dei file di formato, con supporto
+dei formati di Sql 6.x; in caso di BCP IN, consente di caricare il file
+di formato sia dalla definizione della tabella di origine che da un
+file formato precedentemente definito, conpossibilita' di effettuare
+variazioni su questo.
+Sicuramente la possibilita' di costruire file batch da lanciare o anche
+l'utilizzo da riga di comando di BCP.exe possono dare risultati a dire
+poco stupefacenti, ma non sempre le situazioni sono di semplice
+comprensione... per operazioni Bulk Copy relativamente semplici e' una
+soluzione a mio vedere degna.
+
+Viene presentata anche una intefaccia visuale per la generazione di comandi
+INSERT INTO per il popolamento di tabelle con esportazione dei dati da
+tabelle esistenti; tra le varie opzioni:
+e' possibile esportare tutti i tipi di colonna ad eccezione di IMAGE e
+VARIANT (non disponibile per Sql7 ma aggiunto per la versione DbaMgr2k),
+in quanto per questo tipo di dati non e' possibile effettuare una corretta
+conversione in Testo;
+a livello di colonna:
+        e' possibile includere/escludere alcune colonne, rinominarle in ALIAS
+        nello script, caricare valori di DEFAULT o alternativi in caso di
+        valori NULL, riposizionare ordinalmente le colonne;
+a livello di tabella:
+        e' possibile specificare di cancellare il contenuto della tabella di
+        destinazione con TRUNCATE oppure DELETE, settare il tipo di
+        DATEFORMAT preferito, anche se la procedura provvede all'esportazione
+        in formato canonico ODBC, settare il mantenimento o meno dei valori
+        IDENTITY, il numero di righe per ogni batch, una clausola WHERE e
+        ORDER BY con appropriata sintassi T-SQL, fornire un ALIAS per il nome
+        della tabella di destinazione, se separare ogni n righe l'output su
+        piu' files;
+        e' anche possibile la generazione dei comandi DDL di generazione
+        della tabella, in questo caso perdendo la possibilita' di fornire
+        ALIAS, includendo/escludendo la generazione di Indici, Trigger,
+        Indici Full Text, e le sole Chiavi INTERNE, in quanto non vengono
+        generati ne' DDL di oggetti dai quali eventualmente la tabella puo'
+        dipendere, ne' i relativi comandi INSERT INTO per la gestione
+        dell'integrita' referenziale.
+
+In aggiunta (ed in difformita' da SqlServer 2000), DbaMgr2k rende possibile
+la gestione di piu' proprieta' estese per gli oggetti (database compreso) che
+supportano tali estensioni; il valore delle properita' estese sara' sempre
+salvato come testo.
+
+Non e' neanche molto documentato, come al solito lo faro' dopo......
+
+Manca sicuramente un bel debug test, la gestione dei Mantainance Plan,
+la modifica visuale di viste, DTS.
+
+DbaMgr2k e' localizzabile intervenendo sui file di Linguaggio ".Ln2" presenti
+nella cartella dell'applicazione; l'applicazione provvede a autogenerare i
+file di linguaggio Italiano ed Inglese in caso di loro mancanza, e, da tali
+basi, e' possibile localizzare l'interfaccia semplicemente copiando uno di
+questi file, mantenendo l'estensione ".Ln2", rinominarlo nella lingua
+desiderata (ad es.: Deutsch.Ln2 per il tedesco) e traducendo il file riga
+per riga. Una volta cosi' approntato il file di linguaggio, questi apparira'
+nei settaggi del Combo Box del form di connessione al Server.
+
+Non sono uno scatenato di interfacce, sono relativamente spartano...
+
+E' allegato un file script di installazione .ISS per InnoSetup 2.0.18/19,
+consultare comunque i BOL di sql2000 per le dipendenze dell'oggetto
+SQL-DMO; notare che i BOL riportano di registrare sqldmo.rll, che e' una
+libreria di risorse NON registrabile mentre va registrata sqldmo.dll;
+
+Mi e' stato riferito di problemi di risoluzione di interfaccia circa
+alcune proprieta' di DMO neanche riportate dall'Object Browser...
+personalmente ho riscontrato il corretto funzionamento sia con
+installato sp2 di MSDE 2000,
+sqldmo.dll      ver file 2000.11.19     ver 2000.08.00.534
+
+che nella versione retail
+
+Nota..
+Al sito
+http://www.imranweb.com/freesoft/
+e' possibile scaricare una versione free di WinSQL e di Enhaced ISQL/w,
+progettate per Sql6.5 ma che funzionano abbastanza anche con Sql7/2000 e
+MSDE1.0/MSDE2000 che implementano utility potenti (e free).
+
+E' anche consigliato scaricare una utility Free "SqlUtil" (SqlUtil2k.exe)
+presso il sito www.innovmgtsys.com.
+
+============================================================================
+Se desiderate essere informati circa nuove versioni rilasciate di DbaMgr2k,
+inviami una e-mail con indicata la Vostra autorizzazione al trattamento dei
+dati personali ai sensi della legge 675/96> e della Vostra volonta' di
+aderire a questo servizio.
+Il servizio e' gratuito e potra' essere sospeso in qualsiasi momento senza
+preventiva notifica.
+============================================================================
+
+----- DISCLAIMER ---------------------------------------------------------------
+Tutto il materiale incluso e' da considerarsi FREEWARE; e' utilizzabile
+e distribuibile senza limitazioni, mantenendo chiaramente inalterate le
+indicazioni dell'autore.
+
+Il software puo' essere ceduto in bundle con software/applicazioni di vostra
+produzione/sviluppo senza pero' richiedere alcun compenso extra; in caso di
+utilizzo in tal senso l'autore deve essere informato di tale bundle e di
+informazioni relative all'applicazione principale.
+
+Il materiale viene distribuito nella speranza che possa essere utile ad
+altri, senza alcuna garanzia, di nessun tipo. L'autore non si riterra'
+responsabile di alcun danno, perdita di dati o danneggiamenti che l'utilizzo
+del materiale incluso possa arrecare.
+		USATELO A VOSTRO RISCHIO E PERICOLO
+--------------------------------------------------------------------------------
+Doveste trovare bugs (e li troverete ...), errori o implementare migliorie,
+vi prego volermi contattare; sono graditi feed-back, commenti, consigli,
+ma non le dissacrazioni... ;-)
+
+Andrea Montanari
+montanari_andrea@virgilio.it
+http://utenti.lycos.it/asql/index.html
+*************************
+	HISTORY
+*************************
+0.2.0   xx/xx/2002
+fPwd            aggiunti i caratteri + e -;
+frmLogin
+
+bObjDMO         ErrExecSqlDirect(); modificato il parametro EXEC_TYPE da
+                SQLDMOExec_ContinueOnError a SQLDMOExec_Default;
+                (grazie a Allanon per il feedback);
+--------------------------
+0.1.0   19/11/2002
+Release Iniziale allineata con la versione 0.47.0 di DbaMgr (per Sql7)
+End
