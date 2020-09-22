@@ -1,0 +1,57 @@
+DbaMgr2k è una console amministrativa alternativa per Microsft MSDE 2.0
+
+Tutto il materiale incluso e' da considerarsi FREEWARE; e' utilizzabile e distribuibile senza limitazioni, mantenendo chiaramente inalterate le indicazioni dell'autore.
+
+Il software puo' essere ceduto in bundle con software/applicazioni di vostra produzione/sviluppo senza pero' richiedere alcun compenso extra; in caso di utilizzo in tal senso l'autore deve essere informato di tale bundle e di informazioni relative all'applicazione principale.
+
+DbaMgr2k viene usato a vostro rischio e pericolo, senza alcuna garanzia, di nessun tipo. L'autore non si riterra' responsabile di alcun danno, perdita di dati o danneggiamenti che l'utilizzo del materiale incluso possa arrecare.
+
+============================================================================
+Se desiderate essere informati circa nuove versioni rilasciate di DbaMgr2k, inviami una e-mail con indicata la Vostra autorizzazione al trattamento dei dati personali ai sensi della legge 675/96> e della Vostra volonta' di aderire a questo servizio.
+Il servizio e' gratuito e potra' essere sospeso in qualsiasi momento senza preventiva notifica.
+============================================================================
+
+CONDIZIONI E LICENZA D'USO
+QUESTO PROGRAMMA COSTITUISCE FREEWARE.
+L'USO DEL PROGRAMMA É AD ESCLUSIVO RISCHIO E PERICOLO DELL'UTILIZZATORE FINALE - L'AUTORE NON É E NON SARA' RESPONSABILE O CHIAMABILE IN CAUSA COME PARTE LESIVA PER DANNI, PERDITE, PERDITE DI DATI, DANNEGGIAMENTI, DERIVANTI DALL'USO DEL PROGRAMMA, COME PURE NON É GARANTITO ALCUN SUPPORTO PER LO STESSO.
+
+TUTTE LE INFORMAZIONI FONO FORNITE "COME SONO" SENZA PROVVEDERE ALCUNA GARANZIA DI NESSUN TIPO. IN DEROGA AGLI ARTT. 1578 E SEGUENTI COD. CIV., L'AUTORE NON FORNISCE ALCUNA GARANZIA, ESPRESSE O IMPLICITA, TRA LE ALTRE, LA GARANZIA DI COMMERCIABILITA' ED IDONEITA' PER FINI PARTICOLARI, RELATIVAMENTE AL SOFTWARE, MATERIALE SCRITTO FORNITO A CORREDO ED AD ESSO CONNESSO.
+NESSUNA RIVENDICAZIONE PUO' ESSERE INTRAPPRESA PER EVENTUALI DANNI DERIVANTI DALL'USO, PROPRIO E/O IMPROPRIO, INABILITA' NELL'USO COME PURE DALL'INADEGUATEZZA DELLO STESSO; CIO' VALE PER OGNI TIPO DI DANNO, SENZA LIMITAZIONE ALCUNA, INCLUSI DANNO PER PERDITA O MANCATO GUADAGNO, PERDITA DI INFORMAZIONI E/O ALTRE PERDITE ECONOMICHE, SENZA LIMITAZIONI TEMPORALI.
+NON SI RISPONDE PER EVENUALI INCOMPATIBILITA' CON L'HARDWARE.
+NON VIENE AUTORIZZATA ALCUN TIPO DI GARANZIA, ORALE O SCRITTA, SE NON QUELLE DERIVANTI DALL'AUTORE STESSO.
+
+TUTTI I MARCHI CITATI COSTITUISCONO MARCHIO REGISTRATO E/O PROPRIETA' DEI RISPETTIVI AVENTI DIRITTO.
+
+Presso il sito http://utenti.lycos.it/asql/index.html è altresì diponibile DbaMgr, la versione di questo programma per installazioni di Microsoft SqlServer 7.0 e MSDE 1.0.
+Andrea Montanari
+http://utenti.lycos.it/asql/index.html
+montanari_andrea@virgilio.it
+-------------------------------------------------
+
+DbaMgr2 is an alternative administrative Console for Microsft MSDE 2.0
+
+All the material included in this compressed archive is FREEWARE; you can use and distribute it without restriction, on condition that the copyright and author informations are maintained unchanged.
+You are entitled to bundle (with no extra cost) this software with software/application of yours; shoul'd you do this way you have to inform the author about this bundle and to provide information about your application.
+
+You use the program at your own risk - the author accepts no responsibility for any problems or losses which might arise from its use, and support for the software is not guaranteed.
+
+===========================================================================
+If you want to be notified of new releases of DbaMgr2k, send me an e-mail and you can subscribe to this service.
+The service is free of charge and coul'd be interrupted by me at any time with no previuos information.
+===========================================================================
+
+CONDITION OF USE
+THIS PROGRAM IS FREEWARE.
+YOU USE THE PROGRAM AT YOUR OWN RISK - THE AUTHOR ACCEPTS NO RESPONSIBILITY FOR ANY PROBLEMS OR LOSSES WHICH MIGHT ARISE FROM ITS USE, AND SUPPORT FOR THE SOFTWARE IS NOT GUARANTEED.
+
+ALL KIND OF INFORMATION ARE PROVIDED ON A "AS IS" BASIS WITHOUT WARRANTY OF ANY KIND.  THE PRODUCER DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL THE PRODUCER OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, LOSS OF BUSINESS PROFITS OR SPECIAL DAMAGES, EVEN IF THE PRODUCER OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+THE PRODUCER DOES NOT WARRANT THAT THE FUNCTIONS FOR THE LICENSED SOFTWARE FOR CODE CONTAINED IN THE PACKAGE WILL MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE LICENSED SOFTWARE OR CODE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE LICENSED SOFTWARE OR CODE CAN BE CORRECTED.  FURTHERMORE, THE PRODUCER DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE LICENSED SOFTWARE, CODE OR RELATED DOCUMENTATION IN TERMS OF THEIR CORRECTNESS, ACCURACY, RELIABILITY, OR OTHERWISE.  NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY THE PRODUCER OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF THIS WARRANTY.  SHOULD THE LICENSED SOFTWARE OR CODE PROVE DEFECTIVE AFTER THE PRODUCER HAS DELIVERED THE SAME, YOU, AND YOU ALONE, SHALL ASSUME THE ENTIRE COST ASSOCIATED WITH ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+NO LIABILITY FOR CONSEQUENTIAL DAMAGES. IN NO EVENT SHALL THE AUTHOR OR ITS SUPPLIERS BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, SPECIAL, INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND ARISING OUT OF THE DELIVERY, PERFORMANCE OR USE OF THE SOFTWARE, EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL THE AUTHOR'S LIABILITY FOR ANY CLAIM, WHETHER IN CONTRACT, TORT OR ANY OTHER THEORY OF LIABILITY, EXCEED THE LICENSE FEE PAID BY YOU, IF ANY.
+
+At http://utenti.lycos.it/asql/index.html site, a Microsoft SqlServer 7.0 and MSDE 1.0. compatible version of this program, DbaMgr, is available.
+
+Andrea Montanari
+http://utenti.lycos.it/asql/index.html
+montanari_andrea@virgilio.it

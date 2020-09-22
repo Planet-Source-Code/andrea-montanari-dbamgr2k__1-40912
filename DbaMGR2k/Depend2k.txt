@@ -1,0 +1,112 @@
+Note di Installazione e Dipendenze di DbaMgr2k.
+
+DbaMgr richiede le seguenti librerie di sistema e runtime:
+* Runtime + Visual Basic Virtual Machine
+..\WINDOWS\SYSTEM\COMCAT.DLL;	file da registrare via regserver
+..\WINDOWS\SYSTEM\STDOLE2.TLB;	TypeLibrary da registrare
+..\WINDOWS\SYSTEM\ASYCFILT.DLL
+..\WINDOWS\SYSTEM\OLEPRO32.DLL;	file da registrare via regserver
+..\WINDOWS\SYSTEM\OLEAUT32.DLL;	file da registrare via regserver
+..\WINDOWS\SYSTEM\VB6IT.DLL;	sharedfile
+..\WINDOWS\SYSTEM\MSVBVM60.DLL;	sharedfile
+
+* Altre Dipendenze e OCX
+..\WINDOWS\SYSTEM\STDFTIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSSTDFMT.DLL; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\Msbind.dll; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\ADODCIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSADODC.OCX; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\DATGDIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSDATGRD.OCX; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\FLXGDIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSFLXGRD.OCX; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\RCHTXIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\RICHED32.DLL
+..\WINDOWS\SYSTEM\RICHTX32.OCX; sharedfile da registrare via regserver
+..\WINDOWS\SYSTEM\MSCMCIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSCOMCTL.OCX; sharedfile da registrare via regserver
+
+Terminata l'installazione di DbaMgr2k, qualora non fossero già presenti nel sistema i componenti Client di Microsoft SqlServer 2000, sarà necessario configurare correttamente tali componenti al fine di rendere possibile la connessione verso un eventuale server remoto; qualora il server da raggiungere sia locale e già installato, normalmente la connessione viene effettuata su una named pipe (anche su macchine con SO Win9x tale protocollo viene simulato) e non c'è la necessità di effettuare tale operazione.
+
+* al fine di soddisfare tale esigenza, è necessaria l'esecuzione del programma CliConfg.exe, solitamente posizionato nella directory di sistema \\Windows\System\ per sistemi operativi Windows9x oppure \\WINNT\System32\ per sistemi operativi Windows NT, Windows 2000 e Windows XP; tale programma è accessibile anche via Menu; sarà necessario impostare il protocollo di comunicazione con il server SqlServer, eventualmente l'alias del server, etc. É altresì possibile accedere via Menu al programma SvrNetCn.exe, solitamente posizionato nella directory \BINN dell'installazione di Microsoft Sql Server, che gestisce le Utilità di Rete del Server Sql Server.
+
+DbaMgr2k si appoggia su parte dei componenti Client di Microsoft SqlServer 2000 connosciuti come libreria SQL-DMO:
+tali componenti possono essere installati dal CD di installazione di Microsoft SqlServer 2000 e sono costituiti dai seguenti moduli:
+
+; non licenziato da redist.txt ma presenti dopo l'installazione di MDAC2.6
+..\WINDOWS\SYSTEM\odbcbcp.dll; sharedfile
+; non licenziato da redist.txt ma presenti dopo l'installazione di MDAC2.6
+..\WINDOWS\SYSTEM\sqlwoa.dll
+; non licenziato da redist.txt ma presenti dopo l'installazione di MDAC2.6
+..\WINDOWS\SYSTEM\sqlwid.dll
+..\MSSQL7\Binn\w95scm.dll; DestDir: DbaMgr2k\Binn
+..\WINDOWS\SYSTEM\sqlunirl.dll
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqlresld.dll; DestDir: DbaMgr2k\Binn
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqlsvc.dll; DestDir: DbaMgr2k\Binn
+; non licenziato da redist.txt ma presenti dopo l'installazione di MDAC2.6
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\Resources\1033\sqlsvc.RLL; DestDir: DbaMgr2k\Binn\Resources\1033
+; non licenziato da redist.txt ma presenti dopo l'installazione di MDAC2.6
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\Resources\1033\Sqldmo.rll; DestDir: DbaMgr2k\Binn\Resources\1033
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqldmo.dll; DestDir: DbaMgr2k\Binn ;	file da registrare via regserver
+
+per DestDir si intende la Directory di installazione di un'istanza di Microsoft SqlServer 2000 oppure la directory di installazione di DbaMgr2k.
+
+Sono altresì necessari i Componenti di Accesso ai Dati Microsoft, conosciute come librerie ADO (MDAC) reperibili presso il sito Microsoft all'indirizzo:
+www.microsoft.com/data/
+il progetto è stato sviluppato, testato con la versione 2.6 (sp2) e richiede almeno la presenza di MDAC 2.6.
+--------------------------------------------
+Notes on Installation and Dependencies of DbaMgr2k
+
+DbaMgr2k requires following runtime and system modules:
+* Runtime + Visual Basic Virtual Machine
+..\WINDOWS\SYSTEM\COMCAT.DLL;	file to be registered via regserver
+..\WINDOWS\SYSTEM\STDOLE2.TLB;	TypeLibrary to be registered
+..\WINDOWS\SYSTEM\ASYCFILT.DLL
+..\WINDOWS\SYSTEM\OLEPRO32.DLL;	file to be registered via regserver
+..\WINDOWS\SYSTEM\OLEAUT32.DLL;	file to be registered via regserver
+..\WINDOWS\SYSTEM\VB6IT.DLL;	sharedfile
+..\WINDOWS\SYSTEM\MSVBVM60.DLL;	sharedfile
+
+* Other Dependencies and OCX
+..\WINDOWS\SYSTEM\STDFTIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSSTDFMT.DLL; file to be registered via regserver
+..\WINDOWS\SYSTEM\Msbind.dll; file to be registered via regserver
+..\WINDOWS\SYSTEM\ADODCIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSADODC.OCX; file to be registered via regserver
+..\WINDOWS\SYSTEM\DATGDIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSDATGRD.OCX; file to be registered via regserver
+..\WINDOWS\SYSTEM\FLXGDIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSFLXGRD.OCX; file to be registered via regserver
+..\WINDOWS\SYSTEM\RCHTXIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\RICHED32.DLL
+..\WINDOWS\SYSTEM\RICHTX32.OCX; file to be registered via regserver
+..\WINDOWS\SYSTEM\MSCMCIT.DLL; sharedfile
+..\WINDOWS\SYSTEM\MSCOMCTL.OCX; file to be registered via regserver
+
+Once the installation of DbaMgr2k is terminated, if the Client components of Microsoft SqlServer 2000 were not already present on the computer, it will be necessary to configure that components in order to establish connection to a remote server; should the server to reach be local and already installed, this connection is usally reached via named pipe (on Win9x boxes too, where this mode is internally simulated) so there is no need for this operation.
+
+* to fullfill this nead, you have to run the program CliConfg.exe, usually located in \\Windows\System\ on Windows9x boxes or \\WINNT\System32\ on Windows NT, Windows 2000 and Windows XP, accessible from the menu shrotcut, where you can set the communication protocol of your choice, as long as Alias server name, etc. It is possible to reach via menu to SvrNetCn.exe, usually located in \BINN directory of Microsoft Sql Server installation, to manage Sql Server Network Utility.
+
+DbaMgr2k bases itself on part of Microsoft Sql Server 2000 Client Components, known as SQL-DMO library;
+you can install this components via the Setup CD of Microsoft Sql Server 2000, and are the objects listed as:
+; not licensed by redist.txt but available after installation of MDAC2.6
+..\WINDOWS\SYSTEM\odbcbcp.dll; sharedfile
+; not licensed by redist.txt but available after installation of MDAC2.6
+..\WINDOWS\SYSTEM\sqlwoa.dll
+; not licensed by redist.txt but available after installation of MDAC2.6
+..\WINDOWS\SYSTEM\sqlwid.dll
+..\MSSQL7\Binn\w95scm.dll; DestDir: DbaMgr2k\Binn
+..\WINDOWS\SYSTEM\sqlunirl.dll
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqlresld.dll; DestDir: DbaMgr2k\Binn
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqlsvc.dll; DestDir: DbaMgr2k\Binn
+; not licensed by redist.txt but available after installation of MDAC2.6
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\Resources\1033\sqlsvc.RLL; DestDir: DbaMgr2k\Binn\Resources\1033
+; not licensed by redist.txt but available after installation of MDAC2.6
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\Resources\1033\Sqldmo.rll; DestDir: DbaMgr2k\Binn\Resources\1033
+..\Programmi\Microsoft SQL Server\80\Tools\Binn\sqldmo.dll; DestDir: DbaMgr2k\Binn ; file to be registered via regserver
+
+DestDir can either be the installation directory of one instance of Microsoft SqlServer 2000 or the installation directory of DbaMgr2k.
+
+Microsoft Data Access Component libraries for ADO (MDAC) are requested too; you will find them at microsoft web site:
+www.microsoft.com/data/
+DbaMgr was developed and tested with MDAC 2.6 sp2 version, and requires at least MDAC 2.6.

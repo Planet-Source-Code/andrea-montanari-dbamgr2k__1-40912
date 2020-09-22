@@ -1,0 +1,5 @@
+Questa Installazione RICHIEDE la presenza dei componenti di Accesso ai Dati Microsoft MDAC 2.6 e dei Componenti Client di Microsoft Sql Server 2000 comprendente i componenti SQL-DMO; l'installazione fallirà in assenza di questi componenti software.
+
+--------------------------------------------
+
+This Setup REQUIRES Microsoft Access Components MDAC 2.6 and Client Components of Microsoft Sql Server 2000 (including Sql-DMO) ; Setup will fail without this software. 
